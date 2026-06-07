@@ -1,0 +1,51 @@
+{
+	"name": "TabberNeueVertical",
+	"version": "0.2.0",
+	"author": [
+		"Bee",
+		"OpenAI"
+	],
+	"descriptionmsg": "tabberneuevertical-desc",
+	"type": "other",
+	"license-name": "GPL-3.0-or-later",
+	"requires": {
+		"MediaWiki": ">= 1.43.0",
+		"extensions": {
+			"TabberNeue": "*"
+		}
+	},
+	"MessagesDirs": {
+		"TabberNeueVertical": [
+			"i18n"
+		]
+	},
+	"AutoloadNamespaces": {
+		"MediaWiki\\Extension\\TabberNeueVertical\\": "includes/"
+	},
+	"ResourceModules": {
+		"ext.tabberNeueVertical": {
+			"styles": [
+				"ext.tabberNeueVertical/ext.tabberNeueVertical.less"
+			],
+			"scripts": [
+				"ext.tabberNeueVertical/ext.tabberNeueVertical.js"
+			],
+			"dependencies": [
+				"mediawiki.util"
+			]
+		}
+	},
+	"ResourceFileModulePaths": {
+		"localBasePath": "modules",
+		"remoteExtPath": "TabberNeueVertical/modules"
+	},
+	"Hooks": {
+		"BeforePageDisplay": "main"
+	},
+	"HookHandlers": {
+		"main": {
+			"class": "MediaWiki\\Extension\\TabberNeueVertical\\Hooks"
+		}
+	},
+	"manifest_version": 2
+}
