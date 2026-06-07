@@ -18,18 +18,22 @@
       order: 0;
       font-size: var(--font-size-small, 85%);
       font-weight: var(--font-weight-medium, 500);
-      flex: 0 0 var(--tabber-vertical-tab-width, 13rem);
       min-inline-size: var(--tabber-vertical-tab-min-width, 9rem);
       max-inline-size: var(--tabber-vertical-tab-max-width, 18rem);
       min-block-size: fit-content;
 
       &:not(.tabber__header--bg-img) {
         block-size: auto;
+        flex: 0 0 var(--tabber-vertical-tab-width, 13rem);
       }
 
       > .tabber__header--bg-img {
-        inline-size: var(--tabber-vertical-tab-bg-img-min-width, 2rem);
-        block-size: var(--tabber-vertical-tab-bg-img-min-width, 2rem);
+        flex: 0 0 var(--tabber-vertical-tab-bg-img-size, 2rem);
+        aspect-ratio: 1/1;
+        min-inline-size: var(--tabber-vertical-tab-bg-img-size, 2rem);
+        max-inline-size: calc(2 * var(--tabber-vertical-tab-bg-img-size, 2rem));
+        min-block-size: var(--tabber-vertical-tab-bg-img-size, 2rem);
+        max-block-size: calc(2 * var(--tabber-vertical-tab-bg-img-size, 2rem));
       }
 
       /* Hide horizontal overflow nav buttons in vertical mode. */
